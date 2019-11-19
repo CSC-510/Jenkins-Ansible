@@ -106,14 +106,14 @@ ansible all -m ping -i inventory -vvvv
 Let's install a web server, called nginx (say like engine-X), on the VM. The web server will automatically start.
 
 ```shell
-ansible all -b -m apt -i inventory -a 'pkg=nginx state=installed'
+ansible all -b -m apt -i inventory -a 'pkg=nginx state=present'
 ```
 
 Open a browser and enter in your VM's ip address, e.g. http://192.168.14.14:80/
 
 Removing nginx:
 ```shell
-ansible all -b -m apt -i inventory -a 'pkg=nginx state=removed'
+ansible all -b -m apt -i inventory -a 'pkg=nginx state=absent'
 ```
 
 Actually, nginx is a metapackage, so you also need to run this:
